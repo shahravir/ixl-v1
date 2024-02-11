@@ -44,6 +44,10 @@ const Mathematics = () => {
     }
   };
 
+  const handleMCQSelection = (choice) => {
+    setUserAnswer(choice);
+  };
+
   if (questions.length === 0) {
     return <div>Loading...</div>; // You can render a loading indicator while fetching questions
   }
@@ -67,13 +71,32 @@ const Mathematics = () => {
       <div className="question-container">
         <p className="question-text">{questions[currentPage - 1].question_text}</p>
       </div>
+      <div className="answer-container">
+        {questions[currentPage - 1].question_type === 'mcq' && (
+          <div className="mcq-options">
+            {questions[currentPage - 1].mc.map((choice, index) => (
+              <button
+                key={index}
+                className="mcq-button"
+                onClick={() => handleMCQSelection(choice)}
+              >
+                {choice}
+              </button>
+            ))}
+          </div>
+        )}
+        {questions[currentPage - 1].question_type === 'input' && (
+          <div className="answer-input">
+            <input
+              type="text"
+              value={userAnswer}
+              onChange={(e) => setUserAnswer(e.target.value)}
+              placeholder="Enter your answer"
+            />
+          </div>
+        )}
+      </div>
       <div className="answer-input">
-        <input
-          type="text"
-          value={userAnswer}
-          onChange={(e) => setUserAnswer(e.target.value)}
-          placeholder="Enter your answer"
-        />
         <button className="next-button" onClick={handleSubmit}>
           {currentPage === questions.length ? 'Submit' : 'Next'}
         </button>

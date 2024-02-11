@@ -1,6 +1,7 @@
+/* Default styling */
 .mathematics-page {
     width: 100%;
-    max-width: 600px; /* Adjust the max-width as needed */
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f0f0f0;
@@ -9,18 +10,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ensure the component takes up the full viewport height */
-    box-sizing: border-box; /* Include padding in the total width */
+    min-height: 100vh;
+    box-sizing: border-box;
   }
   
-  .question-container {
+  .question-container,
+  .answer-container {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     width: 100%;
-    box-sizing: border-box; /* Include padding in the total width */
+    box-sizing: border-box;
   }
   
   .question-text {
@@ -37,23 +39,40 @@
   }
   
   input[type="text"] {
-    flex: 1; /* Take up remaining space */
+    flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: calc(100% - 120px);
   }
   
   .submit-button, .next-button, .finish-button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #075e54;
-    color: #fff;
+    background-color: #128c7e;
+    color: #000000;
     cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .mcq-button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eaeceb;
+    color: #000000;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
   }
   
-  .submit-button:hover, .next-button:hover, .finish-button:hover {
+  .mcq-button {
+    width: 100%;
+  }
+  
+  .submit-button:hover, .next-button:hover, .finish-button:hover, .mcq-button:hover {
     background-color: #128c7e;
   }
   
@@ -64,5 +83,52 @@
   .result p {
     font-size: 14px;
     color: #333;
+  }
+  
+  .mcq-options {
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .mcq-option {
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mcq-button:hover {
+    background-color: #919090;
+  }
+  
+  .mcq-button.selected {
+    background-color: #80cbc4;
+  }
+  
+  .mcq-option.selected,
+  .mcq-option.selected:hover {
+    background-color: #ffcccc; /* Red color for selected option */
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .mathematics-page {
+      padding: 30px;
+    }
+  
+    .question-container,
+    .answer-container {
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+  
+    .submit-button, .next-button, .finish-button, .mcq-button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
   }
   
