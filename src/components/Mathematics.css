@@ -1,0 +1,68 @@
+.mathematics-page {
+    width: 100%;
+    max-width: 600px; /* Adjust the max-width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ensure the component takes up the full viewport height */
+    box-sizing: border-box; /* Include padding in the total width */
+  }
+  
+  .question-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in the total width */
+  }
+  
+  .question-text {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .answer-input {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  input[type="text"] {
+    flex: 1; /* Take up remaining space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 120px);
+  }
+  
+  .submit-button, .next-button, .finish-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #075e54;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover, .next-button:hover, .finish-button:hover {
+    background-color: #128c7e;
+  }
+  
+  .result {
+    margin-top: 20px;
+  }
+  
+  .result p {
+    font-size: 14px;
+    color: #333;
+  }
+  
